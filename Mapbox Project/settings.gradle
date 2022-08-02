@@ -1,0 +1,4 @@
+include ':mapbox-android-sdk-9.5.0-javadoc'
+include ':mapbox-android-sdk-9.5.0'
+include ':app'
+rootProject.name = "17605096OPSC7312"
