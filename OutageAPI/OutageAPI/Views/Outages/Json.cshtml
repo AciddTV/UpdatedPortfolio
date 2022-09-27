@@ -1,0 +1,19 @@
+﻿@model IEnumerable<OutageAPI.Models.Outage>
+
+@{
+    Layout = null;
+
+}
+
+@using System.Text.Json;
+@using OutageAPI.Models; 
+@{ 
+    TempData.Keep("areastr");
+    JsonDocument jsonify = JsonDocument.Parse(JsonSerializer.Serialize(TempData["areastr"]));
+}
+
+<html>
+    <body>
+        <object>@jsonify</object>
+    </body>
+</html>

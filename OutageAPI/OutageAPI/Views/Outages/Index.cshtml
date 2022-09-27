@@ -1,0 +1,55 @@
+﻿@model IEnumerable<OutageAPI.Models.Outage>
+@{
+    ViewBag.Title = "Outage API Portal";
+}
+
+@using System.Text.Json;
+
+<h2>Current Outages</h2>
+
+<p>
+    @Html.ActionLink("Add Outage", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Area)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Provider)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LeadTime)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Area)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Provider)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LeadTime)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+     }
+</table>
+
+<p><b><br />Development Tools :: Outage API</b></p>
+
+<p>@Html.ActionLink("Render Json - Areas", "Json")</p>
+<p>@Html.ActionLink("Render Json - Providers", "JsonProviders")</p>
+<p>@Html.ActionLink("Render Json - LeadTimes", "JsonLeads")</p>
+
+<p><b><br />Development Tools :: Acumatica</b></p>
+<p>@Html.ActionLink("Business Days Calculation (21 business days from today, including weekends and holidays)", "GetBDays")</p>

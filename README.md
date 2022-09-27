@@ -20,3 +20,11 @@ This is a game that myself and a group created in university. Here you will find
 ## Farm EVIL (Game): 
 
 Here you will find the compiled game files for Farm EVIL (winx86-64).
+
+## Outage API:
+
+While working for Fibrestream, an Internet Service Provider, I created an API using ASP.NET Core MVC that the support team could use to communicate network outages with clients.
+
+Rather than letting the customers see this screen (hence the lack of front-end), the values are stored in a SQL Server database, and are also updated in an API section of the program.
+
+This API is used by the company's call flow program, 3CX, so that when customers call the support team, they are informed of any and all outages that are being experienced, all in real-time!
